@@ -1,75 +1,117 @@
 /* styles.css */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Orbitron", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #4a0000);
   margin: 0;
   color: #ecf0f1;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   transition: all 0.3s ease;
 }
 
 .container {
-  background: rgba(44, 62, 80, 0.8);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(34, 34, 34, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
-  width: 90%;
-  max-width: 600px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  backdrop-filter: blur(15px);
+  transition: all 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: 2.5em;
+  margin-bottom: 30px;
   transition: all 0.3s ease;
-  color: #00d2ff;
-  background: -webkit-linear-gradient(#00d2ff, #3a7bd5);
+  color: #ff0000;
+  background: linear-gradient(90deg, #ff0000, #ff4b2b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: neon-glow 1.5s infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000,
+      0 0 40px #ff0000;
+  }
+  to {
+    text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000,
+      0 0 50px #ff0000;
+  }
 }
 
 .form-group {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  gap: 10px;
+  margin-bottom: 30px;
+  gap: 20px;
   flex-wrap: wrap;
+  transition: all 0.5s ease;
+}
+
+#previewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  transition: all 0.5s ease;
 }
 
 input[type="file"] {
   display: none;
 }
 
-label[for="imageInput"],
-select,
-button {
+label[for="imageInput"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 120px;
   height: 50px;
-  font-size: 1em;
+  font-size: 1.5em;
   border: none;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   color: #ecf0f1;
   backdrop-filter: blur(5px);
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
-label[for="imageInput"]:before {
+label[for="imageInput"]::before {
   content: "+";
   font-size: 1.5em;
+}
+
+select,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-size: 1em;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ecf0f1;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 select {
@@ -77,24 +119,26 @@ select {
   -webkit-appearance: none;
   appearance: none;
   padding: 0 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   color: #ecf0f1;
-  border-radius: 8px;
+  border-radius: 12px;
   backdrop-filter: blur(5px);
   border: none;
   height: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 select option {
-  background: rgba(44, 62, 80, 0.8);
+  background: rgba(34, 34, 34, 0.9);
   color: #ecf0f1;
 }
 
 button {
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  background: linear-gradient(45deg, #ff0000, #ff4b2b);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 button:before {
@@ -116,7 +160,7 @@ button:hover:before {
 }
 
 button:hover {
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  background: linear-gradient(45deg, #ff0000, #ff4b2b);
   transform: scale(1.05);
 }
 
@@ -124,25 +168,25 @@ button:hover {
   display: block;
   margin-top: 10px;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   color: #ecf0f1;
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 #downloadLinks a:hover {
   background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 #downloadAllButton {
   width: 220px;
   white-space: nowrap;
-  margin-top: 20px;
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(45deg, #ff0000, #ff4b2b);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -151,7 +195,7 @@ button:hover {
   backdrop-filter: blur(5px);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 #downloadAllButton:before {
@@ -171,7 +215,7 @@ button:hover {
 }
 
 #downloadAllButton:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(45deg, #ff0000, #ff4b2b);
   transform: scale(1.05);
 }
 
@@ -183,72 +227,97 @@ button:hover {
 }
 
 .preview-item img {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 100px; /* Asegura que las imágenes cargadas y convertidas tengan el mismo tamaño */
+  max-height: 100px;
   border-radius: 8px;
-  margin-right: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-right: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
 }
 
 .preview-item span {
-  font-size: 0.9em;
+  font-size: 1em;
   text-align: left;
   flex: 1;
 }
 
 .preview-item button {
   margin-left: 10px;
-  width: auto;
-  background: linear-gradient(45deg, #36d1dc, #5b86e5);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #ff0000, #ff4b2b);
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-item button::before {
+  content: url("https://www.svgrepo.com/show/168267/download.svg"); /* Puedes reemplazar esto con tu icono de descarga */
+  width: 20px;
+  height: 20px;
 }
 
 .preview-item button:hover {
   transform: scale(1.05);
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  label[for="imageInput"],
-  select,
-  button {
-    width: 100px;
-    height: 40px;
-    font-size: 0.9em;
-  }
-
-  #downloadAllButton {
-    width: 200px;
-    padding: 10px 20px;
-  }
+/* Estilizar el scroll */
+body::-webkit-scrollbar,
+.container::-webkit-scrollbar {
+  width: 12px;
 }
 
-@media (max-width: 400px) {
-  .container {
-    padding: 15px;
-  }
+body::-webkit-scrollbar-track,
+.container::-webkit-scrollbar-track {
+  background: rgba(34, 34, 34, 0.9);
+}
 
-  h1 {
-    font-size: 1.2em;
-  }
+body::-webkit-scrollbar-thumb,
+.container::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff0000, #ff4b2b);
+  border-radius: 6px;
+  border: 3px solid rgba(34, 34, 34, 0.9);
+}
 
-  label[for="imageInput"],
-  select,
-  button {
-    width: 90px;
-    height: 35px;
-    font-size: 0.8em;
-  }
+body::-webkit-scrollbar-thumb:hover,
+.container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff4b2b, #ff0000);
+}
 
-  #downloadAllButton {
-    width: 180px;
-    padding: 8px 16px;
-  }
+/* Animación de carga */
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+}
+
+#loadingBar {
+  width: 80%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#loadingProgress {
+  height: 20px;
+  width: 0;
+  background: linear-gradient(45deg, #ff0000, #ff4b2b);
+  border-radius: 10px;
+}
+
+#loadingText {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1.2em;
 }
