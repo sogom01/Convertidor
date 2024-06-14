@@ -72,7 +72,9 @@ function convertImages() {
                         downloadLink.href = url;
                         const originalFileName = file.name.split('.').slice(0, -1).join('.') + '.' + format;
                         downloadLink.download = originalFileName;
+                        document.body.appendChild(downloadLink);
                         downloadLink.click();
+                        document.body.removeChild(downloadLink);
                     };
 
                     previewItem.appendChild(thumbnail);
@@ -94,7 +96,9 @@ function convertImages() {
             const zipLink = document.createElement('a');
             zipLink.href = URL.createObjectURL(content);
             zipLink.download = "converted-images.zip";
+            document.body.appendChild(zipLink);
             zipLink.click();
+            document.body.removeChild(zipLink);
         });
     });
 }
