@@ -70,7 +70,8 @@ function convertImages() {
                     link.onclick = function () {
                         const downloadLink = document.createElement('a');
                         downloadLink.href = url;
-                        downloadLink.download = `converted-image-${index + 1}.${format}`;
+                        const originalFileName = file.name.split('.').slice(0, -1).join('.') + '.' + format;
+                        downloadLink.download = originalFileName;
                         downloadLink.click();
                     };
 
@@ -79,7 +80,7 @@ function convertImages() {
                     previewItem.appendChild(link);
                     previewContainer.appendChild(previewItem);
 
-                    zip.file(`converted-image-${index + 1}.${format}`, blob);
+                    zip.file(file.name.split('.').slice(0, -1).join('.') + '.' + format, blob);
                 }, `image/${format}`);
             }
             img.src = event.target.result;
