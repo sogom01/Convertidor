@@ -5,9 +5,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #1b1b2f;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   margin: 0;
   color: #ecf0f1;
+  overflow: hidden;
   transition: all 0.3s ease;
 }
 
@@ -27,6 +28,10 @@ h1 {
   font-size: 2em;
   margin-bottom: 20px;
   transition: all 0.3s ease;
+  color: #00d2ff;
+  background: -webkit-linear-gradient(#00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .form-group {
@@ -48,17 +53,18 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 40px;
+  width: 120px;
+  height: 50px;
   font-size: 1em;
   border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
   color: #ecf0f1;
   backdrop-filter: blur(5px);
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 label[for="imageInput"]:before {
@@ -71,12 +77,12 @@ select {
   -webkit-appearance: none;
   appearance: none;
   padding: 0 10px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   color: #ecf0f1;
   border-radius: 8px;
   backdrop-filter: blur(5px);
   border: none;
-  height: 40px;
+  height: 50px;
 }
 
 select option {
@@ -85,7 +91,7 @@ select option {
 }
 
 button {
-  background: rgba(231, 76, 60, 0.8);
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -109,16 +115,22 @@ button:hover:before {
   transform: rotate(0deg);
 }
 
+button:hover {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  transform: scale(1.05);
+}
+
 #downloadLinks a {
   display: block;
   margin-top: 10px;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   color: #ecf0f1;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #downloadLinks a:hover {
@@ -126,19 +138,20 @@ button:hover:before {
 }
 
 #downloadAllButton {
-  width: 200px;
+  width: 220px;
   white-space: nowrap;
   margin-top: 20px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #downloadAllButton:before {
@@ -159,6 +172,7 @@ button:hover:before {
 
 #downloadAllButton:hover {
   background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 .preview-item {
@@ -173,10 +187,11 @@ button:hover:before {
   max-height: 50px;
   border-radius: 8px;
   margin-right: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .preview-item span {
-  font-size: 0.8em;
+  font-size: 0.9em;
   text-align: left;
   flex: 1;
 }
@@ -184,7 +199,12 @@ button:hover:before {
 .preview-item button {
   margin-left: 10px;
   width: auto;
-  background: rgba(52, 152, 219, 0.8);
+  background: linear-gradient(45deg, #36d1dc, #5b86e5);
+  transition: all 0.3s ease;
+}
+
+.preview-item button:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 600px) {
@@ -199,14 +219,14 @@ button:hover:before {
   label[for="imageInput"],
   select,
   button {
-    width: 80px;
-    height: 35px;
+    width: 100px;
+    height: 40px;
     font-size: 0.9em;
   }
 
   #downloadAllButton {
-    width: 180px;
-    padding: 8px 16px;
+    width: 200px;
+    padding: 10px 20px;
   }
 }
 
@@ -222,13 +242,13 @@ button:hover:before {
   label[for="imageInput"],
   select,
   button {
-    width: 70px;
-    height: 30px;
+    width: 90px;
+    height: 35px;
     font-size: 0.8em;
   }
 
   #downloadAllButton {
-    width: 160px;
-    padding: 6px 12px;
+    width: 180px;
+    padding: 8px 16px;
   }
 }
