@@ -94,6 +94,7 @@ function convertImages() {
                     fileName.textContent = file.name;
 
                     const link = document.createElement('button');
+                    link.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm0 2c.554 0 1.077-.22 1.47-.613.394-.394.613-.916.613-1.47s-.22-1.077-.613-1.47C13.077 14.22 12.554 14 12 14s-1.077.22-1.47.613c-.394.394-.613.916-.613 1.47s.22 1.077.613 1.47C10.923 17.78 11.446 18 12 18z"/></svg>`;
                     link.onclick = function () {
                         const downloadLink = document.createElement('a');
                         downloadLink.href = url;

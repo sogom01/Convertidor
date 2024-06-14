@@ -242,25 +242,33 @@ button:hover {
 }
 
 .preview-item button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 10px;
   width: 40px;
   height: 40px;
   background: linear-gradient(45deg, #ff0000, #ff4b2b);
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.preview-item button::before {
-  content: url("https://www.svgrepo.com/show/168267/download.svg"); /* Puedes reemplazar esto con tu icono de descarga */
+.preview-item button svg {
+  fill: #ecf0f1;
   width: 20px;
   height: 20px;
+  transition: all 0.3s ease;
 }
 
 .preview-item button:hover {
   transform: scale(1.05);
+}
+
+.preview-item button:hover svg {
+  fill: #ffffff;
 }
 
 /* Estilizar el scroll */
