@@ -95,7 +95,7 @@ function convertImages() {
         zip.generateAsync({ type: "blob" }).then((content) => {
             const zipLink = document.createElement('a');
             zipLink.href = URL.createObjectURL(content);
-            zipLink.download = "converted-images.zip";
+            zipLink.download = "convert-img.zip";
             document.body.appendChild(zipLink);
             zipLink.click();
             document.body.removeChild(zipLink);
