@@ -76,9 +76,9 @@ function convertImages() {
         reader.onload = function (event) {
             const img = new Image();
             img.onload = function () {
-                // Reduce image size for preview and conversion
-                canvas.width = img.width / 2; // Reduce width by half
-                canvas.height = img.height / 2; // Reduce height by half
+                // Resize image to 1280x720
+                canvas.width = 1920;
+                canvas.height = 1080;
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                 canvas.toBlob((blob) => {
@@ -121,7 +121,7 @@ function convertImages() {
                         loadingOverlay.style.display = 'none';
                         downloadAllButton.style.display = 'block';
                     }
-                }, `image/${format}`);
+                }, `image/${format}`, 0.89); // Adjust compression quality here
             }
             img.src = event.target.result;
         }
