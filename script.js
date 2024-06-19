@@ -171,6 +171,7 @@ function convertImages() {
                         downloadAllButton.classList.remove('hidden');
                         document.getElementById('renameButton').classList.remove('hidden');
                         document.getElementById('clearHistoryButton').classList.remove('hidden');
+                        document.getElementById('convertButton').classList.add('hidden'); // Hide the convert button
                         updateConversionHistory(files, format);
                     }
                 }, `image/${format}`, quality);

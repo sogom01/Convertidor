@@ -19,6 +19,8 @@ body.light {
   --item-border: #e0e0e0;
   --button-bg: #333;
   --button-text: #fff;
+  --convert-button-bg: #007bff;
+  --convert-button-text: #fff;
 }
 
 body.dark {
@@ -29,6 +31,8 @@ body.dark {
   --item-border: #555555;
   --button-bg: #f4f7f9;
   --button-text: #333;
+  --convert-button-bg: #007bff;
+  --convert-button-text: #fff;
 }
 
 .container {
@@ -36,8 +40,7 @@ body.dark {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -191,6 +194,16 @@ button {
 button:hover {
   background: var(--button-text);
   color: var(--button-bg);
+}
+
+#convertButton {
+  background: var(--convert-button-bg);
+  color: var(--convert-button-text);
+}
+
+#convertButton:hover {
+  background: var(--convert-button-text);
+  color: var(--convert-button-bg);
 }
 
 .preview-section,
