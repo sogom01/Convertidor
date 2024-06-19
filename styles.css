@@ -274,7 +274,7 @@ button:hover {
 }
 
 .preview-item button:hover {
-  background: var(--button-text);
+  background: var (--button-text);
   color: var(--button-bg);
 }
 

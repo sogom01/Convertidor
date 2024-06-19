@@ -96,6 +96,7 @@ function previewFiles(files) {
 
 function convertImages() {
     const formats = Array.from(document.querySelectorAll('#formatSelect input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const keepDimensions = document.getElementById('keepDimensions').checked;
     const dimensionSelectValue = document.getElementById('dimensionSelect').value;
     const customWidth = dimensionSelectValue === 'custom' ? parseInt(document.getElementById('customWidth').value) : parseInt(dimensionSelectValue.split('x')[0]);
     const customHeight = dimensionSelectValue === 'custom' ? parseInt(document.getElementById('customHeight').value) : parseInt(dimensionSelectValue.split('x')[1]);
@@ -131,11 +132,19 @@ function convertImages() {
             const img = new Image();
             img.onload = function () {
                 formats.forEach((format, formatIndex) => {
-                    // Resize image to custom dimensions
-                    canvas.width = customWidth;
-                    canvas.height = customHeight;
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    if (!keepDimensions) {
+                        // Resize image to custom dimensions
+                        canvas.width = customWidth;
+                        canvas.height = customHeight;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    } else {
+                        // Keep original dimensions
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    }
                     canvas.toBlob((blob) => {
                         const url = URL.createObjectURL(blob);
 
