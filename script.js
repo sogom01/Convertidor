@@ -121,7 +121,7 @@ function convertImages() {
                         loadingOverlay.style.display = 'none';
                         downloadAllButton.style.display = 'block';
                     }
-                }, `image/${format}`, 0.89); // Adjust compression quality here
+                }, `image/${format}`, 0.8); // Adjust compression quality here
             }
             img.src = event.target.result;
         }
