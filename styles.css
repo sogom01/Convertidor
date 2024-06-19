@@ -166,6 +166,7 @@ label {
 
 select,
 input[type="range"],
+input[type="number"],
 button {
   display: inline-flex;
   align-items: center;
@@ -204,6 +205,10 @@ button:hover {
 #convertButton:hover {
   background: var(--convert-button-text);
   color: var(--convert-button-bg);
+}
+
+.custom-dimensions.hidden {
+  display: none;
 }
 
 .preview-section,
@@ -281,12 +286,25 @@ button:hover {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap; /* Añadido para permitir que los botones se ajusten si es necesario */
   width: 100%;
   margin-top: 20px;
 }
 
 .hidden {
   display: none !important;
+}
+
+/* Estilos para el grupo de checkboxes */
+.checkbox-group {
+  display: flex;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* Animación de carga */

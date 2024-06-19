@@ -36,14 +36,14 @@
             </section>
             <section class="settings-section">
                 <div class="form-group">
-                    <label for="formatSelect">Formato:</label>
-                    <select id="formatSelect">
-                        <option value="png">PNG</option>
-                        <option value="jpeg">JPEG</option>
-                        <option value="webp">WEBP</option>
-                        <option value="bmp">BMP</option>
-                        <option value="tiff">TIFF</option>
-                    </select>
+                    <label for="formatSelect">Formatos de Salida:</label>
+                    <div id="formatSelect" class="checkbox-group">
+                        <label><input type="checkbox" value="png"> PNG</label>
+                        <label><input type="checkbox" value="jpeg"> JPEG</label>
+                        <label><input type="checkbox" value="webp"> WEBP</label>
+                        <label><input type="checkbox" value="bmp"> BMP</label>
+                        <label><input type="checkbox" value="tiff"> TIFF</label>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="dimensionSelect">Dimensiones:</label>
@@ -53,7 +53,14 @@
                         <option value="800x600">800x600 (SVGA)</option>
                         <option value="640x480">640x480 (VGA)</option>
                         <option value="320x240">320x240 (QVGA)</option>
+                        <option value="custom">Personalizado</option>
                     </select>
+                </div>
+                <div class="form-group custom-dimensions hidden">
+                    <label for="customWidth">Ancho:</label>
+                    <input type="number" id="customWidth" min="1" placeholder="Ancho">
+                    <label for="customHeight">Alto:</label>
+                    <input type="number" id="customHeight" min="1" placeholder="Alto">
                 </div>
                 <div class="form-group">
                     <label for="qualityRange">Calidad:</label>
@@ -61,13 +68,14 @@
                     <span id="qualityValue">0.9</span>
                 </div>
             </section>
-            <section class="action-section">
+            <section class="action-section button-row">
                 <button id="convertButton">Convertir</button>
-                <div class="button-row" id="postConvertButtons">
-                    <button id="downloadAllButton" class="hidden">Descargar Todas</button>
-                    <button id="renameButton" class="hidden">Cambio de Nombre Masivo</button>
-                    <button id="clearHistoryButton" class="hidden">Limpiar Historial</button>
-                </div>
+                <button id="downloadAllButton" class="hidden">Descargar Todas</button>
+                <button id="renameButton" class="hidden">Cambio de Nombre Masivo</button>
+                <button id="clearHistoryButton" class="hidden">Limpiar Historial</button>
+                <button id="reloadButton" class="hidden" aria-label="Reload Page">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
             </section>
             <section id="previewContainer" class="preview-section grid-container"></section>
             <section id="historyContainer" class="history-section hidden">
