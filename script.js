@@ -239,7 +239,7 @@ function renameFiles() {
     const previewItems = previewContainer.getElementsByClassName('preview-item');
     Array.from(previewItems).forEach((item, index) => {
         const fileName = item.querySelector('span');
-        fileName.textContent = `${newName}_${index + 1}.` + fileName.textContent.split('.').pop();
+        fileName.textContent = `${newName}.${index + 1}.` + fileName.textContent.split('.').pop();
     });
 }
 
